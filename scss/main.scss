@@ -1,0 +1,106 @@
+@import "fonts";
+@import "variabeles";
+@import "mixins";
+
+// Style
+body {
+  font-family: "Lato", sans-serif;
+  &::before {
+    content: " ";
+    background-image: url(../bg/bg.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 50vmax;
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @media screen and (max-width: 992px) {
+      opacity: 0.4;
+    }
+  }
+}
+
+// Navbar
+.custom-nav {
+  .navbar-brand {
+    img {
+      width: 15px;
+      margin-top: -5px;
+    }
+    span {
+      color: $secondaryColor;
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-left: 0.5em;
+    }
+  }
+
+  #navbarNav {
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          text-transform: uppercase;
+          color: $primaryColor;
+          font-weight: 400;
+          margin-left: 1.3em;
+          transition: 0.3s color ease;
+
+          &:hover {
+            color: darken($color: $textColor, $amount: 50%);
+          }
+        }
+        .sing-up-button {
+          background-color: $textColor;
+          color: $tertiaryColor;
+          border-radius: 2em;
+          border: 0;
+          padding-left: 1.5em;
+          padding-right: 1.5em;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 992px) {
+    margin-top: -1em;
+  }
+}
+
+// Custom Section
+.custom-section {
+  margin-top: 10em;
+  h2 {
+    font-weight: 700;
+    font-size: 4rem;
+    color: $primaryColor;
+  }
+  h3 {
+    font-weight: 400;
+    font-size: 3em;
+    color: $secondaryColor;
+    line-height: 1;
+  }
+
+  p {
+    color: $tertiaryColor;
+    font-size: 1.1rem;
+    margin-top: 2em;
+  }
+
+  a {
+    @include tombol;
+    margin-top: 1.2em;
+  }
+
+  @media screen and (max-width: 992px) {
+    margin-top: 3em;
+    text-align: center;
+    h3,
+    h3,
+    p {
+      text-shadow: 1px 1px 2px rgba($primaryColor, 0.4);
+    }
+  }
+}
